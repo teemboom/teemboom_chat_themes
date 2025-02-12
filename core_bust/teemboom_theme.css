@@ -1,0 +1,325 @@
+#teemboom_chat{
+    position: relative;
+	width: 100%;
+	background: var(--teemboom-main);
+	color: var(--teemboom-text);
+	font-family: var(--teemboom-font_family);
+	font-size: var(--teemboom-font_size);
+}
+
+#teemboom_chat img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+#teemboom_chat input, textarea{
+	border: none;
+	outline: none;
+}
+
+
+
+/* For app */
+#teemboom_core_bust{
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+#teemboom_conversations{
+	width: 280px;
+	flex-shrink: 0;
+	overflow-y: auto;
+	padding: 10px;
+	padding-bottom: 0;
+	border-right: 1px var(--teemboom-border) solid;
+}
+#teemboom_conversations_header{
+	font-size: 5em;
+	margin-bottom: 10px;
+}
+#teemboom_convo_rooms{
+	width: 100%;
+}
+.teemboom_convo_room{
+	position: relative;
+	display: flex;
+	cursor: pointer;
+	padding: 10px 2px 5px 2px;
+	margin-bottom: 5px;
+	border-radius: 10px;
+}
+.teemboom_convo_room:hover{
+	background-color: var(--teemboom-messages);
+}
+.teemboom_convo_room span{
+	width: 50px;
+	height: 50px;
+	border-radius: 10px;
+	margin-right: 10px;
+	margin-left: 2px;
+	flex-shrink: 0;
+	overflow: hidden;
+}
+.teemboom_convo_room_active{
+	background-color: var(--teemboom-messages);
+}
+.teemboom_cr_content{
+	width: 100%;
+	height: 50px;
+	padding-bottom: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.teemboom_cr_content header{
+	font-size: 3.2em;
+	font-weight: 600;
+	margin-bottom: 2px;
+}
+.teemboom_cr_content p{
+	width: 210px;
+	font-size: 2.3em;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.teemboom_ur_alert{
+	position: absolute;
+	top: 3px;
+	right: 3px;
+	width: 20px; 
+	height: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	font-size: 2em;
+	background-color: var(--teemboom-messages);
+	display: none;
+}
+
+
+#teemboom_chatMessages{
+    width: 100%; 
+	height: 100%;
+	max-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+#teemboom_current_room{
+	width: 100%;
+	box-sizing: border-box;
+	padding: 5px 6px;
+	border-bottom: 1px var(--teemboom-border) solid;
+	display: flex;
+	flex-shrink: 0;
+	align-items: end;
+}
+#teemboom_current_room_pic{
+	width: 35px;
+	height: 35px;
+	border-radius: 8px;
+	overflow: hidden;
+	margin-right: 7px;
+}
+
+#teemboom_current_room_name{
+	font-size: 4em;
+	margin-bottom: 4px;
+}
+
+
+
+
+#teemboom_messages{
+	position: relative;
+	height: calc(100% - 200px);
+	overflow-y: auto;
+	padding: 10px 10px 80px 10px;
+}
+
+.teemboom_message{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: end;
+    justify-content: left;
+    margin-bottom: 10px;
+}
+.teemboom_uM{
+    flex-direction: row-reverse !important;
+    justify-content: right;
+}
+
+.teemboom_messageUserProfile{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+	overflow: hidden;
+}
+.teemboom_messageContent{
+    width: fit-content;
+    min-width: 200px;
+    max-width: 70%;
+    min-height: 30px;
+	height: fit-content;
+	padding: 10px;
+    margin: 0 5px;
+	/* border: 1px #888 solid; */
+	background: var(--teemboom-messages);
+    border-radius: 8px;
+}
+.teemboom_message_parent{
+	width: 100%;
+	box-sizing: border-box;
+	border-left: 3px var(--teemboom-text) solid;
+	background: var(--teemboom-surround);
+	padding: 10px 10px 5px 10px;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+.teemboom_message_parent:hover{
+	filter: brightness(80%);
+}
+.teemboom_message_parent header{
+	font-size: 2.3em;
+	font-weight: 600;
+	margin-bottom: 3px;
+}
+.teemboom_message_parent p{
+	font-size: 2.3em;
+	line-height: 150%;
+}
+.teemboom_messageContent p{
+	font-size: 2.8em;
+	line-height: 160%;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+.teemboom_messageContent span{
+	display: block;
+	width: 100%;
+	text-align: right;
+	font-size: 2.3em;
+}
+
+.teemboom_message_options{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	display: none;
+}
+
+.teemboom_message_options svg{
+	width: 12px;
+	height: 12px;
+	margin: 6px 5px 0 5px;
+	cursor: pointer;
+}
+.teemboom_message:hover .teemboom_message_options{
+	display: block;
+}
+.teemboom_messageEditInput{
+	width: 100%;
+	height: 44px;
+	background-color: var(--teemboom-surround);
+	padding: 4px 2px;
+	border-radius: 4px;
+	font-size: 2.2em;
+	line-height: 140%;
+}
+.teemboom_messageEditClose{
+	width: 12px;
+	height: 12px;
+	font-size: 9px;
+	font-weight: 600;
+	border-radius: 50%;
+	background-color: var(--teemboom-text);
+	color: var(--teemboom-surround);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.teemboom_msg_dating{
+	width: 100%;
+	display: flex;
+	padding: 15px 0;
+	align-items: center;
+}
+.teemboom_msg_dating p{
+	font-size: 2.3em;
+	margin-right: 10px;
+	flex-shrink: 0;
+}
+.teemboom_msg_dating div{
+	width: 100%;
+	height: 1px;
+	border-bottom: 1px var(--teemboom-border) solid;
+}
+
+
+
+
+
+
+#teemboom_sendMessage{
+	position: relative;
+    bottom: 0vh;
+    width: calc(100% - 40px);
+    height: 90px;
+    padding: 10px 20px;
+    background-color: var(--teemboom-messages);
+	border-radius: 5px;
+}
+#teemboom_sendMessage textarea{
+	width: 100%;
+	background-color: inherit;
+	padding-top: 10px;
+}
+#teemboom_sendMessage textarea::placeholder{
+	color: var(--teemboom-text);
+}
+#teemboom_sendMessage #teemboom_scrollDown{
+	position: absolute;
+	top: -40px;
+	left: 50%;
+	padding: 10px;
+	background-color: var(--teemboom-messages);
+	border: 1px var(--teemboom-border) solid;
+	border-radius: 50%;
+	cursor: pointer;
+	display: none;
+}
+
+
+#teemboom_smReplyCard{
+	width: calc(100% - 20px);
+	height: fit-content;
+	max-height: 60px;
+	position: absolute;
+	top: 0%; left: 0;
+	padding: 5px 10px;
+	transform: translateY(-100%);
+	background-color: var(--teemboom-surround);
+	border-left: 5px var(--teemboom-text) solid;
+	box-sizing: border-box;
+	display: none;
+}
+#teemboom_smReplyCard header{
+	font-size: 2.3em;
+	font-weight: 600;
+	margin-bottom: 4px;
+}
+
+#teemboom_smReplyCard p{
+	font-size: 2em;
+	width: 96%;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}

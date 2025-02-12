@@ -1,0 +1,25 @@
+{
+    "main": {
+        "title": "Main Background",
+        "default": "#fff",
+        "children": []
+    },
+    "text": {
+        "title": "Text Color",
+        "default": "#292929",
+        "children": []
+    },
+    "border": {
+        "title": "Border Color",
+        "default": "#ddd",
+        "children": []
+    },
+    "messages": {
+        "title": "Messages Background",
+        "default": "#edeef9"
+    },
+    "surround": {
+        "title": "Surround",
+        "default": "#aaa"
+    }
+}
